@@ -1,0 +1,104 @@
+/*메인 jsp  */
+header {
+height: 75px;
+width: 820px;
+background-color:#9b6c37;
+top:0;
+right:auto;
+left:auto;
+position: fixed;
+}
+#ar {
+height: 300px;
+padding-top: 75px;
+background-size: 820px 120%;
+width: 820px;
+height: 300px;
+}
+#ar2 {height: 250px;}
+
+#ar4 {
+height: 200px;
+width: 820px;
+background-color: #405e5e;
+}
+
+#ar3 {
+position: fixed;
+background-color: green;
+bottom:0;
+right:auto;
+left:auto;
+height: 200px;
+width:820px;
+background-color: #405e5e;
+}
+
+#page{width: 820px; margin: 0px auto;}
+#a {
+    padding-top: 30px;
+    padding-left: 30px;
+}
+#b {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    color: white;
+}
+body {background-color: #fee2cd;}
+
+/*header*/
+#c {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    color: white;
+}
+#name {float: left;}
+#headerimg{float: left;}
+#d{display: none;}
+#c{display: none;}
+
+/*main view  */
+#mainview{color: white;}
+
+/*sing_up  */
+#sign_Up{width: 820px; margin: 0px auto; display: none; color: white;} 
+
+/*socket*/
+#messageArea{
+resize: none; 
+border: none; 
+outline: none;
+}
+#message{
+line-height: 25px;
+margin-top: 5px;
+}
+
+/*table*/
+#table {width:800px; }
+#table_background{
+background-size: 820px 120%;
+width: 820px;
+height: 100%;
+}
+#table_title {font-weight: bold;}
+#table_background div{float: left;}
+
+/* textarea */
+#textarea{display: none;}
+#textarea textarea{
+background-color: transparent;
+color: white;
+border: none;
+outline: none;
+resize: none;
+}
+#Read{
+color: orange;
+display: none;
+}
+#write{
+color: orange;
+}

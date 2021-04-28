@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="day3_rpg">
+<!-- Member -->
+<insert id="insertMember" parameterType="memberVo">
+insert into member values(#{id},#{email},#{pw},#{name})
+</insert>
+<select id="check" parameterType="String" resultType="String">
+select id from member where (id = #{val} or name = #{val} or email = #{val})
+</select>
+<select id="login" parameterType ='memberVo' resultType="String">
+select * from member where id = #{id} and pw = #{pw}
+</select>
+<select id="getName" parameterType ='String' resultType="String">
+select name from member where id = #{id}
+</select>
+
+<!-- Board -->
+<insert id="insertBoard" parameterType="boardDto">
+insert into board values(board_seq.nextval,#{title},#{contents},
+#{writer},default,0,0,0)
+</insert>
+<select id="getBoard" parameterType ='int' resultType="boardDto">
+select * from board where seq = #{val}
+</select>
+
+<select id="getBoardAll" parameterType="int[]" resultType="boardDto">
+select * from (select rownum r ,a.* from board a  order by r) where r 
+between
+<foreach collection="array" item="num" separator="and">
+ #{num}
+ </foreach>
+</select>
+<update id="textareaRevise" parameterType="boardDto" >
+update board set contents =  #{contents} where  seq = #{seq}
+</update>
+</mapper>
