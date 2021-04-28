@@ -25,11 +25,8 @@ public class MainController {
 	HttpSession  session =null;
 	
 	@RequestMapping("/day3pr")
-	public String webmain(HttpServletRequest request, HttpServletResponse response) throws Exception{
-		if(session==null){
-			session = request.getSession();
-			session.setAttribute("name", "없음");
-		}
+	public String webmain() {
+		
 		return "main";
 	}
 	
@@ -49,7 +46,8 @@ public class MainController {
 	
 	@RequestMapping(value = "/login",method = RequestMethod.POST,produces ={"applcation/json;charset=utf-8" })
 	@ResponseBody
-	public String login(String id, String pw){
+	public String login(String id, String pw ,HttpServletRequest request, HttpServletResponse response) throws Exception{
+		session = request.getSession();
 		 MemberVO vo = new MemberVO();
 		 vo.setId(id);
 		 vo.setPw(pw);
